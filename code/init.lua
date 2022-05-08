@@ -1,15 +1,4 @@
-function startup() 
-  if file.open("init.lua") == nil then
-    print("init.lua deleted or renamed")
-  else
-    print("Running")
-    file.close("init.lua")
-    dofile("appliction.lua")
-end
-end
-
 dofile("application.lua")
-
 function client_connected()
     print("Client connected")
     print("Visit http://" .. wifi.ap.getip())

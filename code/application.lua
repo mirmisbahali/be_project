@@ -1,5 +1,6 @@
 dofile("html.lua")
 
+print("Application Started")
 baseServoPin = 1
 leftServoPin = 2
 rightServoPin = 3
