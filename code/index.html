@@ -8,19 +8,21 @@
   <title>Slider</title>
   <style>
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
 
     body {
-      width: 100vw;
-      height: 100vh;
-      display: flex;
+      width: 100vw; height: 100vh; display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
     }
+
+    #title {
+      margin: 0 auto 2rem auto;
+      text-align: center;
+    }
+
     .form-group {
       padding: 1.2rem 0;
       display: flex;
@@ -35,21 +37,24 @@
 </head>
 
 <body>
-  <div class="form-group">
-    <label for="clawServo">Claw</label>
-    <input onchange="slider(this)" type="range" name="clawServo" id="clawServo" min="0" max="180">
-  </div>
-  <div class="form-group">
-    <label for="leftServo">Left</label>
-    <input onchange="slider(this)" type="range" name="leftServo" id="leftServo" min="0" max="180">
-  </div>
-  <div class="form-group">
-    <label for="rightServo">Right</label>
-    <input onchange="slider(this)" type="range" name="rightServo" id="rightServo" min="0" max="180">
-  </div>
-  <div class="form-group">
-    <label for="baseServo">Base</label>
-    <input onchange="slider(this)" type="range" name="baseServo" id="baseServo" min="0" max="180">
+  <h1 id="title">Design and Analysis of a Robotic Arm with Gripper Mechanism</h1>
+  <div id="form">
+    <div class="form-group">
+      <label for="clawServo">Claw</label>
+      <input onchange="slider(this)" type="range" name="clawServo" id="clawServo" min="0" max="180">
+    </div>
+    <div class="form-group">
+      <label for="leftServo">Left</label>
+      <input onchange="slider(this)" type="range" name="leftServo" id="leftServo" min="0" max="180">
+    </div>
+    <div class="form-group">
+      <label for="rightServo">Right</label>
+      <input onchange="slider(this)" type="range" name="rightServo" id="rightServo" min="0" max="180">
+    </div>
+    <div class="form-group">
+      <label for="baseServo">Base</label>
+      <input onchange="slider(this)" type="range" name="baseServo" id="baseServo" min="0" max="180">
+    </div>
   </div>
   <script>
     function slider(el) {
