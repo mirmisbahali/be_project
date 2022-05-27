@@ -7,9 +7,9 @@ rightServoPin = 3
 clawServoPin = 4
 
 pwm.setup(clawServoPin, 50, 20)
-pwm.setup(leftServoPin, 50, 100)
-pwm.setup(rightServoPin, 50, 100)
-pwm.setup(baseServoPin, 50, 40)
+pwm.setup(leftServoPin, 50, 80)
+pwm.setup(rightServoPin, 50, 80)
+pwm.setup(baseServoPin, 50, 20)
 
 pwm.start(clawServoPin)
 pwm.start(leftServoPin)
