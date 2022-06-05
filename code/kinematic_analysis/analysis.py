@@ -16,10 +16,22 @@ class RobotArm:
 	def getGripperPosition(self, q1, q2, q3):
 		# Calculating Gripper Position
 		phi = (q3 + q2) - 90
+		phi = radians(phi)
+		q1 = radians(q1)
+		q2 = radians(q2)
+		q3 = radians(q3)
+
+		print(q1, q2, q3, phi)
+
 		f = sqrt((self.l3i**2) + (self.l2**2) - (2 * self.l3i * self.l2 * round(cos(phi))))
-		tau = degrees(asin((self.l3i * round(sin(90))) / f))
-		mu = degrees(acos((f**2 + self.l3o**2 - self.l4**2) / (2*f*self.l3o)))
+		
+		tau = asin((self.l3i * round(sin(phi))) / f)
+		mu = acos((f**2 + self.l3o**2 - self.l4**2) / (2*f*self.l3o))
+		
+		print(tau, mu)
+
 		q3o = tau + mu
+		print(q3o)
 		r = -(self.l2 * round(cos(q2))) - (self.l3 * round(cos(q2 + q3o)))
 		px = self.l0 + ((self.l1 + self.l5 + r) * round(sin(q1))) - (self.d*round(cos(q1)))
 		py = -((self.l1 + self.l5 + r) * round(cos(q1))) - (self.d * round(sin(q1)))
@@ -45,4 +57,4 @@ dimensions = {
 # Creating a Robot Arm Instance
 myArm = RobotArm(dimensions)
 
-myArm.getGripperPosition(90, 90, 90)  # This line prints the gripper position when q1 = 90, q2 = 90 and q3 = 90
+myArm.getGripperPosition(23, 34, 50)  # This line prints the gripper position when q1 = 90, q2 = 90 and q3 = 90
